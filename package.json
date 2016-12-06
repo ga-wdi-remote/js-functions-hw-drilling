@@ -12,5 +12,8 @@
     "problem solving"
   ],
   "author": "Matt Brendzel (matt.brendzel@generalassemb.ly)",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
 }

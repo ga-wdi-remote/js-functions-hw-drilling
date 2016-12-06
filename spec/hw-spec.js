@@ -5,7 +5,7 @@
 "use strict";
 
 // 'require' external code //
-const assert = require('assert');
+const expect = require('chai').expect;
 
 // HW Responses
 const sumOfNums = require('../hw.js').sumOfNums;
@@ -24,145 +24,137 @@ const buildObjectFromWords = require('../hw.js').buildObjectFromWords;
 // Tests
 describe('sumOfNums(numsArray)', function(){
   it('takes an array of numbers and returns the sum', function(){
-    assert.equal(sumOfNums([1,2,3,4,5]), 15);
-    assert.equal(sumOfNums([0,0,5]), 5);
-    assert.equal(sumOfNums([-1,0,1]), 0);
+    expect(sumOfNums([1,2,3,4,5])).to.equal(15);
+    expect(sumOfNums([0,0,5])).to.equal(5);
+    expect(sumOfNums([-1,0,1])).to.equal(0);
   });
   it('returns 0 if `numsArray` is empty', function(){
-    assert.equal(sumOfNums([]), 0);
+    expect(sumOfNums([])).to.equal(0);
   });
 });
 describe('numsGreaterThanTen(numsArray)', function(){
   it('returns those numbers which are greater than ten', function(){
-    assert.deepStrictEqual(
-      numsGreaterThanTen([-1, 0, 1, 9, 9.5, 9.99, 10, 11, 20, 100]),
-      [11, 20, 100]
-    );
+    expect(numsGreaterThanTen([-1, 0, 1, 9, 9.5, 9.99, 10, 11, 20, 100])
+    ).to.deep.equal([11, 20, 100]);
   });
 });
 describe('allGreaterThanTen(numsArray)', function(){
   it('returns `true` if all numbers in numsArray are strictly greater than 10', function(){
-    assert.equal(
-      allGreaterThanTen([11, 20, 100]),
-      true
-    );
+    expect(allGreaterThanTen([11, 20, 100])).to.equal(true);
   });
   it('returns `false` if any numbers in numsArray are not strictly greater than 10', function(){
-    assert.equal(allGreaterThanTen([9, 100, 299]), false);
-    assert.equal(allGreaterThanTen([1, 2]), false);
-    assert.equal(allGreaterThanTen([10]), false);
+    expect(allGreaterThanTen([9, 100, 299])).to.equal(false);
+    expect(allGreaterThanTen([1, 2])).to.equal(false);
+    expect(allGreaterThanTen([10])).to.equal(false);
   });
   it('returns `true` if numsArray is empty', function(){
-    assert.equal(allGreaterThanTen([]), true);
+    expect(allGreaterThanTen([])).to.equal(true);
   });
 })
 describe('wordsWithAtLeastFiveLetters(words)', function(){
   it('returns all words that are at least five letters long', function(){
-    assert.deepStrictEqual(
-      wordsWithAtLeastFiveLetters(['alphabet', 'banana', 'carrot', 'doe', 'egg']),
-                                  ['alphabet', 'banana', 'carrot']
-    );
+    expect(wordsWithAtLeastFiveLetters(['alphabet', 'banana', 'carrot', 'doe', 'egg'])
+    ).to.deep.equal(['alphabet', 'banana', 'carrot']);
   });
 });
 describe('allStartingWithA(words)', function(){
   it('returns `true` if all words start with "a" or "A"', function(){
-    assert.equal(allStartingWithA(['apple', 'alligator', 'Arkansas']), true);
+    expect(allStartingWithA(['apple', 'alligator', 'Arkansas'])).to.equal(true);
   });
   it('returns `false` if any words do not start with either "a" or "A"', function(){
-    assert.equal(allStartingWithA(['Amy', 'Bob']), false);
+    expect(allStartingWithA(['Amy', 'Bob'])).to.equal(false);
   });
   it('returns `true` if array is empty', function(){
-    assert.equal(allStartingWithA([]), true);
+    expect(allStartingWithA([])).to.equal(true);
   });
 });
 describe('anyStartingWithB(words)', function(){
   it('returns `true` if the array contains any words starting with "b" or "B"', function(){
-      assert.equal(anyStartingWithB(['Amy', 'Bob']), true);
+      expect(anyStartingWithB(['Amy', 'Bob'])).to.equal(true);
   });
   it('returns `false` if the array does not contain any words starting with either "b" or "B"', function(){
-    assert.equal(anyStartingWithB(['apple', 'alligator', 'Arkansas']), false);
+    expect(anyStartingWithB(['apple', 'alligator', 'Arkansas'])).to.equal(false);
   });
 });
 describe('hasAtLeastNVowels(word, n)', function(){
   it('returns `true` if there are at least `n` vowels (a/A, e/E, i/I, o/O, u/U) in `word`', function(){
-    assert.equal(hasAtLeastNVowels('egg', 0), true);
-    assert.equal(hasAtLeastNVowels('egg', 1), true);
-    assert.equal(hasAtLeastNVowels('apple', 0), true);
-    assert.equal(hasAtLeastNVowels('apple', 1), true);
-    assert.equal(hasAtLeastNVowels('apple', 2), true);
-    assert.equal(hasAtLeastNVowels('Orange', 0), true);
-    assert.equal(hasAtLeastNVowels('Orange', 1), true);
-    assert.equal(hasAtLeastNVowels('Orange', 2), true);
-    assert.equal(hasAtLeastNVowels('Orange', 3), true);
-    assert.equal(hasAtLeastNVowels('DANGEROUS', 0), true);
-    assert.equal(hasAtLeastNVowels('DANGEROUS', 1), true);
-    assert.equal(hasAtLeastNVowels('DANGEROUS', 2), true);
-    assert.equal(hasAtLeastNVowels('DANGEROUS', 3), true);
-    assert.equal(hasAtLeastNVowels('DANGEROUS', 4), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 0), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 1), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 2), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 3), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 4), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 5), true);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 6), true);
+    expect(hasAtLeastNVowels('egg', 0)).to.equal(true);
+    expect(hasAtLeastNVowels('egg', 1)).to.equal(true);
+    expect(hasAtLeastNVowels('apple', 0)).to.equal(true);
+    expect(hasAtLeastNVowels('apple', 1)).to.equal(true);
+    expect(hasAtLeastNVowels('apple', 2)).to.equal(true);
+    expect(hasAtLeastNVowels('Orange', 0)).to.equal(true);
+    expect(hasAtLeastNVowels('Orange', 1)).to.equal(true);
+    expect(hasAtLeastNVowels('Orange', 2)).to.equal(true);
+    expect(hasAtLeastNVowels('Orange', 3)).to.equal(true);
+    expect(hasAtLeastNVowels('DANGEROUS', 0)).to.equal(true);
+    expect(hasAtLeastNVowels('DANGEROUS', 1)).to.equal(true);
+    expect(hasAtLeastNVowels('DANGEROUS', 2)).to.equal(true);
+    expect(hasAtLeastNVowels('DANGEROUS', 3)).to.equal(true);
+    expect(hasAtLeastNVowels('DANGEROUS', 4)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 0)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 1)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 2)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 3)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 4)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 5)).to.equal(true);
+    expect(hasAtLeastNVowels('uncopywriteable', 6)).to.equal(true);
   })
   it('returns `false` if there are fewer than `n` vowels in `word`', function(){
-    assert.equal(hasAtLeastNVowels('egg', 2), false);
-    assert.equal(hasAtLeastNVowels('apple', 3), false);
-    assert.equal(hasAtLeastNVowels('dangerous', 5), false);
-    assert.equal(hasAtLeastNVowels('uncopywriteable', 7), false);
+    expect(hasAtLeastNVowels('egg', 2)).to.equal(false);
+    expect(hasAtLeastNVowels('apple', 3)).to.equal(false);
+    expect(hasAtLeastNVowels('dangerous', 5)).to.equal(false);
+    expect(hasAtLeastNVowels('uncopywriteable', 7)).to.equal(false);
   });
   it('returns `null` if `n` is less than 0', function(){
-    assert.equal(hasAtLeastNVowels('banana', -1), null);
+    expect(hasAtLeastNVowels('banana', -1)).to.equal(null);
   });
 });
 describe('wordsWithAtLeastTwoVowels(words)', function(){
   it('returns all words that have at least two vowels', function(){
-    assert.deepStrictEqual(
-      wordsWithAtLeastTwoVowels(['alphabet', 'bun', 'can', 'doe', 'egg']),
-                                  ['alphabet', 'doe']
-    );
+    expect(wordsWithAtLeastTwoVowels(['alphabet', 'bun', 'can', 'doe', 'egg'])
+    ).to.deep.equal(['alphabet', 'doe']);
   });
 });
 describe('allHaveAtLeastTwoVowels(words)', function(){
   it('returns `true` if all words have at least two vowels', function(){
-    assert.equal(allHaveAtLeastTwoVowels(['apple', 'alligator', 'Arkansas']), true);
+    expect(allHaveAtLeastTwoVowels(['apple', 'alligator', 'Arkansas'])).to.equal(true);
   });
   it('returns `false` if any words do not have at least two vowels', function(){
-    assert.equal(allHaveAtLeastTwoVowels(['Al', 'Barbara']), false);
-    assert.equal(allHaveAtLeastTwoVowels(['Al', 'buck', 'can']), false);
+    expect(allHaveAtLeastTwoVowels(['Al', 'Barbara'])).to.equal(false);
+    expect(allHaveAtLeastTwoVowels(['Al', 'buck', 'can'])).to.equal(false);
   });
   it('returns `true` if array is empty', function(){
-    assert.equal(allHaveAtLeastTwoVowels([]), true);
+    expect(allHaveAtLeastTwoVowels([])).to.equal(true);
   });
 });
 describe('anyHaveAtLeastTwoVowels(words)', function(){
   it('returns `true` if the array contains any words with at least two vowels', function(){
-    assert.equal(anyHaveAtLeastTwoVowels(['apple', 'alligator', 'Arkansas']), true);
-    assert.equal(anyHaveAtLeastTwoVowels(['APPLE', 'bun', 'CAT']), true);
+    expect(anyHaveAtLeastTwoVowels(['apple', 'alligator', 'Arkansas'])).to.equal(true);
+    expect(anyHaveAtLeastTwoVowels(['APPLE', 'bun', 'CAT'])).to.equal(true);
   });
   it('returns `false` if the array does not contain any words with at least two vowels', function(){
-    assert.equal(anyHaveAtLeastTwoVowels(['at', 'Bob', 'cup', 'dog']), false);
+    expect(anyHaveAtLeastTwoVowels(['at', 'Bob', 'cup', 'dog'])).to.equal(false);
   });
 });
 describe('noneHaveTwoOrMoreVowels(words)', function(){
   it('returns `true` if none of the words have at least two vowels', function(){
-    assert.equal(noneHaveTwoOrMoreVowels(['Al', 'buck', 'can']), true);
+    expect(noneHaveTwoOrMoreVowels(['Al', 'buck', 'can'])).to.equal(true);
   });
   it('returns `false` if any words do not have at least two vowels', function(){
-    assert.equal(noneHaveTwoOrMoreVowels(['Al', 'Barbara']), false);
-    assert.equal(noneHaveTwoOrMoreVowels(['apple', 'alligator', 'Arkansas']), false);
+    expect(noneHaveTwoOrMoreVowels(['Al', 'Barbara'])).to.equal(false);
+    expect(noneHaveTwoOrMoreVowels(['apple', 'alligator', 'Arkansas'])).to.equal(false);
   });
   it('returns `true` if array is empty', function(){
-    assert.equal(noneHaveTwoOrMoreVowels([]), true);
+    expect(noneHaveTwoOrMoreVowels([])).to.equal(true);
   });
 });
 describe('buildObjectFromWords(words)', function(){
   it('takes an array of words and returns an object', function(){
-    assert.equal(buildObjectFromWords(['a','b','c']).constructor, ({}).constructor);
+    expect(buildObjectFromWords(['a','b','c']).constructor).to.equal(({}).constructor);
   });
   it('adds every word to that object as a key, and sets the value for that key the length of the word', function(){
-    assert.deepStrictEqual(buildObjectFromWords(['apple', 'banana', 'cranberry']), {'apple': 5, 'banana': 6, 'cranberry': 9});
+    expect(buildObjectFromWords(['apple', 'banana', 'cranberry'])
+    ).to.deep.equal({'apple': 5, 'banana': 6, 'cranberry': 9});
   });
 });
