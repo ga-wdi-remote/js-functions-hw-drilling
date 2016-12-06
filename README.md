@@ -4,15 +4,16 @@
 
 <!-- MATERIALS METADATA -->
 <!--
-  title: 'Function Drilling'
-  type: homework
-  creators: Matt Brendzel
-  competencies: javascript, functions, problem solving
+  title: Function Drilling
+  format: homework
+  duration: 4 hours
+  original author: Matt Brendzel
+  tags: javascript, functions, problem solving
 -->
 
 ## Setup
 
-Make sure that you are on the `master` branch of your `wdi-remote-r2d2` repo.
+Make sure that you are on the `master` branch of your `wdi-remote-matey` repo.
 Then run `git pull upstream master` to pull the latest materials from the
 instructors' repository. You shouldn't hit a merge conflict here, but if you do,
 flag down an instructor right away.
@@ -42,8 +43,8 @@ carefully -- it may give you a clue about what to do next.
 ## Submitting Your Work
 
 When you're ready to submit your work, push the code to your fork on GitHub.
-Then, create an issue on the `wdi-remote-...` repo using the same convention
-as before: "YourGitHubUsername -- Week XX Day XX". Run the test suite one last
+Then, create an issue on the `wdi-remote-matey` repo using the same convention
+as before: "Your Name -- w01d04". Run the test suite one last
 time, take screenshot of the output, and paste that screenshot into the issue's
 body. Also include a link that points back to the code on your fork, and a
 'comfort' score for your understanding of the material.
