@@ -42,9 +42,19 @@ carefully -- it may give you a clue about what to do next.
 
 ## Submitting Your Work
 
-When you're ready to submit your work, push the code to your fork on GitHub.
-Then, create an issue on the `wdi-remote-matey` repo using the same convention
-as before: "Your Name -- w01d04". Run the test suite one last
-time, take screenshot of the output, and paste that screenshot into the issue's
-body. Also include a link that points back to the code on your fork, and a
-'comfort' score for your understanding of the material.
+When you're ready to submit,
+
+1.  Run the command `npm install` from the directory where `package.json` sits.
+2.  Run the command `npm test` from the same directory, and take a screenshot of
+    the output in your terminal.
+3.  Push your code to your fork of the class repo.
+4.  File an issue on the class repo titled "Your Name -- w01d04".
+
+The issue should include:
+
+-   A link that points back to your fork.
+
+-   The screenshot you took.
+
+-   A 'comfort' score on how you feel about the material, from 1 (very
+    uncomfortable) to 5 (very comfortable)
