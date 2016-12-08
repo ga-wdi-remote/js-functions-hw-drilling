@@ -8,25 +8,25 @@
 
 // #1
 // Input: an array of numbers
-// Output: the sum of whatever numbers are passed in;
-//          if the array is empty, return 0;
+// Output: the sum of the numbers that were passed in
+// Edge Case: If the array is empty, return 0
 var sumOfNums = function(numsArray){
   // Your Code Here
 };
 
 // #2
 // Input: an array of numbers
-// Output: an array of numbers from the first array that were strictly greater
-//          than (i.e. greater than but not equal to) 10
+// Output: an array of the numbers from the first array that are strictly
+//         greater (i.e. greater than but not equal to) than 10
 var numsGreaterThanTen = function(numsArray){
   // Your Code Here
 };
 
 // #3
 // Input: an array of numbers
-// Output: `true` if ALL numbers were strictly greater than 10;
-//          `false` otherwise
-// Edge Case: If the array is empty, the function should return `true`.
+// Output: `true` if ALL numbers passed in are strictly greater than 10;
+//         `false` otherwise
+// Edge Case: If the input array is empty, the function should return `true`.
 var allGreaterThanTen = function(numsArray){
   // Your Code Here
 };
