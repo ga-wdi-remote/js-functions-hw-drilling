@@ -42,13 +42,12 @@ carefully -- it may give you a clue about what to do next.
 
 ## Submitting Your Work
 
-When you're ready to submit,
+When you're ready to submit your work,
 
-1.  Run the command `npm install` from the directory where `package.json` sits.
-2.  Run the command `npm test` from the same directory, and take a screenshot of
-    the output in your terminal.
-3.  Push your code to your fork of the class repo.
-4.  File an issue on the class repo titled "Your Name -- w01d04".
+1.  Run the command `npm test` and take a screenshot of the output in your
+    terminal.
+2.  Push your code to your fork of the class repo.
+3.  File an issue on the class repo titled "Your Name -- w01d04".
 
 The issue should include:
 
